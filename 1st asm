@@ -1,0 +1,69 @@
+%%Celcius to Fahrenheit
+cel_input = input("Enter the Celcius temperature: "); %Prompt user's Celcius temperature
+fah_output  = (cel_input * 9/5) + 32; %Convert to Fahrenheit temperature
+fprintf('The Fahrenheit temperature is %.2f\n\n', fah_output); %Print our the conversion
+
+%%Fahrenheit to Celcius
+fah_input = input("Enter the Fahrenheit temperature: "); %Prompt user's Fahrenheit temperature
+cel_output = (fah_input - 32) * 5/9; %Convert to Celcius temperature
+fprintf('The Celcius temperature is %.2f\n\n', cel_output); %Print our the conversion
+ 
+%%Centimeter to Inch
+cen_input = input("Enter the Centimeter figure: "); %Prompt user's Centimeter figure
+inch_output = cen_input/2.54; %Convert to Inch figure
+fprintf('The Inch figure is %.2f\n\n', inch_output); %Print our the conversion
+
+%%Inch to Centimeter
+inch_input = input("Enter the Inch figure: "); %Prompt user's Inch figure
+cen_output = inch_input*2.54; %Convert to Centimeter figure
+fprintf('The Centimeter figure is %.2f\n\n', cen_output); %Print our the conversion
+
+%%Meter to Feet
+meter_input = input("Enter the Meter figure: "); %Prompt user's Meter figure
+feet_output = meter_input/0.3048; %Convert to Feet figure
+fprintf('The Feet figure is %.2f\n\n', feet_output); %Print our the conversion
+
+%%Feet to Meter
+feet_input = input("Enter the Feet figure: "); %Prompt user's Feet figure
+meter_output = feet_input*0.3048; %Convert to Meter figure
+fprintf('The Meter figure is %.2f\n\n', inch_output); %Print our the conversion
+
+%%Kilometer to Miles
+km_input = input("Enter the Kilometer figure: "); %Prompt user's Kilometer figure
+miles_output = km_input/1.609344; %Convert to Miles figure
+fprintf('The Miles figure is %.2f\n\n', miles_output); %Print our the conversion
+
+%%Miles to Kilometer
+miles_input = input("Enter the Miles figure: "); %Prompt user's Miles figure
+km_output = miles_input*1.609344; %Convert to Kilometer figure
+fprintf('The Kilometer figure is %.2f\n\n', km_output); %Print our the conversion
+
+%%Grams to Ounces
+grams_input = input("Enter the Grams figure: "); %Prompt user's Grams figure
+ounces_output = grams_input/28.3495; %Convert to Ounces figure
+fprintf('The Ounces figure is %.2f\n\n', ounces_output); %Print our the conversion
+
+%%Ounces to Grams
+ounces_input = input("Enter the Ounces figure: "); %Prompt user's Ounces figure
+grams_output = ounces_input*28.3495; %Convert to Grams figure
+fprintf('The Grams figure is %.2f\n\n', grams_output); %Print our the conversion
+
+%%Kilogram to Pounds
+kg_input = input("Enter the Kilogram figure: "); %Prompt user's Kilogram figure
+pounds_output = kg_input/0.4536; %Convert to Pounds figure
+fprintf('The Pounds figure is %.2f\n\n', pounds_output); %Print our the conversion
+
+%%Pounds to Kilogram
+pounds_input = input("Enter the Pounds figure: "); %Prompt user's Pounds figure
+kg_output = pounds_input*0.4536; %Convert to Kilogram figure
+fprintf('The Kilogram figure is %.2f\n\n', kg_output); %Print our the conversion
+
+%%Tonne to Ton
+tonne_input = input("Enter the Tonne figure: "); %Prompt user's Tonne figure
+ton_output = tonne_input/1.016; %Convert to Ton figure
+fprintf('The Ton figure is %.2f\n\n', ton_output); %Print our the conversion
+
+%%Ton to Tonne
+ton_input = input("Enter the Ton figure: "); %Prompt user's Ton figure
+tonne_output = ton_input*1.016; %Convert to Tonne figure
+fprintf('The Tonne figure is %.2f\n\n', tonne_output); %Print our the conversion    
