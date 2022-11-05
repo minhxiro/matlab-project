@@ -1,0 +1,29 @@
+%% week 2 
+% Determine the input
+d = 183; %distance of the narrowest point of the grand canyon
+g = 9.8; % gravity
+theta = pi / 4; % the angle of launch
+
+% Calculation to find the initial velocity
+v0 = sqrt((d * g) / sin(2 * theta) );
+
+% Convert m/s into km/h
+new_v0= v0*3.6;
+fprintf('The initial velocity is: %1.2f in km/h', new_v0);
+
+%% Week3 
+x = 183; % Distance of the projectile in m
+theta = pi / 4; %Angle of launch in radian
+v_max = 125 / 3.6; %Initial velocity in km/h convert to m/s. 1m/s = 1km/h / 3.6
+g = 9.8;
+%Find the time to finish the projectile in hour
+%Fomula: x = v*t*cos(theta)
+t = x / (v_max * cos(theta)); %fomula to calculate the time required to finished the projectile
+fprintf('Time to finish the projectile is: %1.2f s \n', t);
+disp('Calculate the initial height:');
+
+%Base on the fomula of y: y = height + v*t*sin(theta)-1/2 * g * t^2
+%substitude y = 0 because in that amount of time, the projectile is
+%finished so y-displacement is 0
+height = 1/2 *(g * t * t) - v_max * t * sin(theta);%equation to find initial height
+fprintf('The initial height required is %1.2f m', height);
