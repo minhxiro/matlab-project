@@ -40,7 +40,8 @@ displacement_35 = v_max * cos(theta_35) * time_plot;%Displacement at angle of 35
 displacement_55 = v_max * cos(theta_55) * time_plot;%Displacement at angle of 55 degree
 
 %Draw the plot
-title('Line plot of distance for each angle');%Title the plot
+title('Line plot of distance', 'FontSize', 16);%Title the plot and its font size
+subtitle('For each angle of 35, 45, 55 degree', 'FontSize',10);%Create subtitle and font size
 hold on % draw multiple graph in a plot
 plot(time_plot, displacement_55); %Plot displacement and time array
 plot(time_plot, displacement_45); %Plot displacement and time array
@@ -50,8 +51,6 @@ xlabel('Time'); %add title for x axe
 ylabel('Displacement');%add title for y axe
 legend('Angle of 55 degree', 'Angle of 45 degree', 'Angle of 35 degree');% add name for graph
 
-%Customize font size
-ax = gca;
-ax.FontSize = 15;
+
 hold off
 
