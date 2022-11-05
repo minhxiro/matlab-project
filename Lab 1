@@ -4,6 +4,7 @@ d = 183; %distance of the narrowest point of the grand canyon
 g = 9.8; % gravity
 theta = pi / 4; % the angle of launch
 
+
 % Calculation to find the initial velocity
 v0 = sqrt((d * g) / sin(2 * theta) );
 
@@ -12,13 +13,14 @@ new_v0= v0*3.6;
 fprintf('The initial velocity is: %1.2f in km/h', new_v0);
 
 %% Week3 
-x = 183; % Distance of the projectile in m
-theta = pi / 4; %Angle of launch in radian
+x_45 = 183; % Distance of the projectile when angle is 45 degree in m
 v_max = 125 / 3.6; %Initial velocity in km/h convert to m/s. 1m/s = 1km/h / 3.6
-g = 9.8;
+g = 9.8; %graviational acceleration
+theta_45 = pi / 4; %Angle of launch at 45 degree in radian
+
 %Find the time to finish the projectile in hour
 %Fomula: x = v*t*cos(theta)
-t = x / (v_max * cos(theta)); %fomula to calculate the time required to finished the projectile
+t = x_45 / (v_max * cos(theta));
 fprintf('Time to finish the projectile is: %1.2f s \n', t);
 disp('Calculate the initial height:');
 
@@ -26,4 +28,29 @@ disp('Calculate the initial height:');
 %substitude y = 0 because in that amount of time, the projectile is
 %finished so y-displacement is 0
 height = 1/2 *(g * t * t) - v_max * t * sin(theta);%equation to find initial height
-fprintf('The initial height required is %1.2f m', height);
+fprintf('The initial height required is %1.2f m \n', height);
+%Calculate the greatest distance of each changed angle and present them in
+%a plot for angle of 35, 45, 55 degree:
+theta_35 = (35*pi) / 180; % Angle at 35 degree
+theta_55 = (55 * pi) / 180; % Angle at 55 degree
+
+time_plot = 0:0.1:10; %Create time array to examine
+displacement_45 = v_max * cos(theta_45) * time_plot;%Displacement at angle of 45 degree
+displacement_35 = v_max * cos(theta_35) * time_plot;%Displacement at angle of 35 degree
+displacement_55 = v_max * cos(theta_55) * time_plot;%Displacement at angle of 55 degree
+
+%Draw the plot
+title('Line plot of distance for each angle');%Title the plot
+hold on % draw multiple graph in a plot
+plot(time_plot, displacement_55); %Plot displacement and time array
+plot(time_plot, displacement_45); %Plot displacement and time array
+plot(time_plot, displacement_35); %Plot displacement and time array
+
+xlabel('Time'); %add title for x axe
+ylabel('Displacement');%add title for y axe
+legend('Angle of 55 degree', 'Angle of 45 degree', 'Angle of 35 degree');% add name for graph
+
+%Customize font size
+ax = gca;
+ax.FontSize = 13;
+hold off
