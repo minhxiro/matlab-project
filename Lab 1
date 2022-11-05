@@ -52,5 +52,6 @@ legend('Angle of 55 degree', 'Angle of 45 degree', 'Angle of 35 degree');% add n
 
 %Customize font size
 ax = gca;
-ax.FontSize = 13;
+ax.FontSize = 15;
 hold off
+
