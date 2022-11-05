@@ -20,14 +20,14 @@ theta_45 = pi / 4; %Angle of launch at 45 degree in radian
 
 %Find the time to finish the projectile in hour
 %Fomula: x = v*t*cos(theta)
-t = x_45 / (v_max * cos(theta));
+t = x_45 / (v_max * cos(theta_45));
 fprintf('Time to finish the projectile is: %1.2f s \n', t);
 disp('Calculate the initial height:');
 
 %Base on the fomula of y: y = height + v*t*sin(theta)-1/2 * g * t^2
 %substitude y = 0 because in that amount of time, the projectile is
 %finished so y-displacement is 0
-height = 1/2 *(g * t * t) - v_max * t * sin(theta);%equation to find initial height
+height = 1/2 *(g * t * t) - v_max * t * sin(theta_45);%equation to find initial height
 fprintf('The initial height required is %1.2f m \n', height);
 %Calculate the greatest distance of each changed angle and present them in
 %a plot for angle of 35, 45, 55 degree:
