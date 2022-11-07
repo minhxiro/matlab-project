@@ -27,7 +27,7 @@ disp('Calculate the initial height:');
 %Base on the fomula of y: y = height + v*t*sin(theta)-1/2 * g * t^2
 %substitude y = 0 because in that amount of time, the projectile is
 %finished so y-displacement is 0
-height = 1/2 *(g * t * t) - v_max * t * sin(theta_45);%equation to find initial height
+height = 1/2 *(g * t.^2) - v_max * t * sin(theta_45);%equation to find initial height
 fprintf('The initial height required is %1.2f m \n', height);
 %Calculate the greatest distance of each changed angle and present them in
 %a plot for angle of 35, 45, 55 degree:
@@ -35,22 +35,29 @@ theta_35 = (35*pi) / 180; % Angle at 35 degree
 theta_55 = (55 * pi) / 180; % Angle at 55 degree
 
 time_plot = 0:0.1:10; %Create time array to examine
-displacement_45 = v_max * cos(theta_45) * time_plot;%Displacement at angle of 45 degree
-displacement_35 = v_max * cos(theta_35) * time_plot;%Displacement at angle of 35 degree
-displacement_55 = v_max * cos(theta_55) * time_plot;%Displacement at angle of 55 degree
+x_displacement_45 = v_max * cos(theta_45) * time_plot;%Displacement at angle of 45 degree
+x_displacement_35 = v_max * cos(theta_35) * time_plot;%Displacement at angle of 35 degree
+x_displacement_55 = v_max * cos(theta_55) * time_plot;%Displacement at angle of 55 degree
+
+%Calculate the vertical displacement:
+y_displacement_45 = height + v_max * time_plot * sin(theta_45) - 1/2 *(g * time_plot.^2);%y-displacement at angle of 45degree
+y_displacement_35 = height + v_max * time_plot * sin(theta_35) - 1/2 * (g* time_plot.^2);%y-displacement at angle of 35degree
+y_displacement_55 = height + v_max * time_plot * sin(theta_55) - 1/2 *(g* time_plot.^2);%y-displacement at angle of 55degree
 
 %Draw the plot
-title('Line plot of distance', 'FontSize', 16);%Title the plot and its font size
+title('Line plot of projectil', 'FontSize', 16);%Title the plot and its font size
 subtitle('For each angle of 35, 45, 55 degree', 'FontSize',10);%Create subtitle and font size
 hold on % draw multiple graph in a plot
-plot(time_plot, displacement_55); %Plot displacement and time array
-plot(time_plot, displacement_45); %Plot displacement and time array
-plot(time_plot, displacement_35); %Plot displacement and time array
+%We examine that the y displacement can be negative if it comes closer to
+%10 so we need to plot the figure when y >= 0
+plot(x_displacement_55(y_displacement_55 >= 0), y_displacement_55(y_displacement_55 >= 0)); %Plot x and y displacement when y displacement >= 0
+plot(x_displacement_45(y_displacement_45 >= 0), y_displacement_45((y_displacement_45 >= 0))); %Plot x and y displacement when y displacement >= 0
+plot(x_displacement_35(y_displacement_35 >= 0), y_displacement_35((y_displacement_35 >= 0))); %Plot x and y displacement when y displacement >= 0
 
-xlabel('Time'); %add title for x axe
-ylabel('Displacement');%add title for y axe
+
+xlabel('x-Displacement'); %add title for x axe
+ylabel('y-Displacement');%add title for y axe
 legend('Angle of 55 degree', 'Angle of 45 degree', 'Angle of 35 degree');% add name for graph
-
 
 hold off
 
