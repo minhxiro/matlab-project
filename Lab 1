@@ -1,3 +1,4 @@
+
 %% week 2 
 % Determine the input
 d = 183; %distance of the narrowest point of the grand canyon
@@ -45,7 +46,7 @@ y_displacement_35 = height + v_max * time_plot * sin(theta_35) - 1/2 * (g* time_
 y_displacement_55 = height + v_max * time_plot * sin(theta_55) - 1/2 *(g* time_plot.^2);%y-displacement at angle of 55degree
 
 %Draw the plot
-title('Line plot of projectil', 'FontSize', 16);%Title the plot and its font size
+title('Line plot of projectile', 'FontSize', 16);%Title the plot and its font size
 subtitle('For each angle of 35, 45, 55 degree', 'FontSize',10);%Create subtitle and font size
 hold on % draw multiple graph in a plot
 %We examine that the y displacement can be negative if it comes closer to
@@ -60,4 +61,3 @@ ylabel('y-Displacement');%add title for y axe
 legend('Angle of 55 degree', 'Angle of 45 degree', 'Angle of 35 degree');% add name for graph
 
 hold off
-
