@@ -1,4 +1,3 @@
-
 %% week 2 
 fprintf('Calculating the initial velocity with the initial height as zero');%The Introduction for this case
 % Determine the input
@@ -50,13 +49,13 @@ y_displacement_55 = height + v_max * time_plot * sin(theta_55) - 1/2 *(g* time_p
 title('Line plot of projectile', 'FontSize', 16);%Title the plot and its font size
 subtitle('For each angle of 35, 45, 55 degree', 'FontSize',10);%Create subtitle and font size
 hold on% plotting the graphs for all three cases at the same time
-plot(x_displacement_55, y_displacement_55); %Plot x and y displacement for 55 degrees
-plot(x_displacement_45, y_displacement_45); %Plot x and y displacement for 45 degrees
-plot(x_displacement_35, y_displacement_35); %Plot x and y displacement for 35 degrees
+plot(x_displacement_55, y_displacement_55); %Plot x and y displacement
+plot(x_displacement_45, y_displacement_45); %Plot x and y displacement
+plot(x_displacement_35, y_displacement_35); %Plot x and y displacement
 
-axis([0, inf, 0, inf]);% Set the limit for both axis
+axis ([0, 200, 0, 140]) ;% Set the limit for both axis
 xlabel('x-Displacement'); %add title for x axe
 ylabel('y-Displacement');%add title for y axe
-legend('Angle of 55 degree', 'Angle of 45 degree', 'Angle of 35 degree');% add name for each graph
+legend('Angle of 55 degree', 'Angle of 45 degree', 'Angle of 35 degree');% add name for graph
 
 hold off
