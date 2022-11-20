@@ -59,13 +59,43 @@ switch color_seletion
       case 'o'
         for row = 1: image_row
             for col = 1 : image_col
-                if(copy(row,col,1) >=200 && copy(row,col,2) <= 120 && copy(row,col,2) >= 40 && copy(row,col,3) <= 60)
+                if(copy(row,col,1) >=119 && copy(row,col,2) <= 120 && copy(row,col,2) >= 40 && copy(row,col,3) <= 60 || (copy(row,col,1) >=130 && copy(row,col,2) <= 140 && copy(row,col,2) >= 20 && copy(row,col,3) <= 20))
                     copy(row,col,1) = 0;
                     copy(row,col,2) = 0;
                     copy(row,col,3) = 0;
                 end
             end
         end
+      case 'c'
+        for row = 1: image_row
+            for col = 1 : image_col
+                if(copy(row,col,1) <= 55 && copy(row,col,2) >= 140 && copy(row,col,3) >= 140)
+                    copy(row,col,1) = 0;
+                    copy(row,col,2) = 0;
+                    copy(row,col,3) = 0;
+                end
+            end
+        end
+      case 'w'
+        for row = 1: image_row
+            for col = 1 : image_col
+                if(copy(row,col,1) >= 62 && copy(row,col,2) >= 62 && copy(row,col,3) >= 62)
+                    copy(row,col,1) = 0;
+                    copy(row,col,2) = 0;
+                    copy(row,col,3) = 0;
+                end
+            end
+        end 
+       case 'm'
+        for row = 1: image_row
+            for col = 1 : image_col
+                if(copy(row,col,1) >= 90 && copy(row,col,2) <= 100 && copy(row,col,3) >= 120)
+                    copy(row,col,1) = 0;
+                    copy(row,col,2) = 0;
+                    copy(row,col,3) = 0;
+                end
+            end
+        end 
     otherwise
         disp('Incorrect selection');
 end
