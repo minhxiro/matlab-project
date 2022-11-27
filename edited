@@ -1,3 +1,4 @@
+%%Lab2
 img = imread('coloredChips.png');%importing image 
 figure(1), imshow(img);%displaying original image(pre adjustment)
 %Create menue for color selection
@@ -18,7 +19,7 @@ switch color_seletion %switch case to determine which color is gonna be changed
     case 'r'
         for row = 1 : image_row % iterate from first row to the final row of image
             for col = 1: image_col % iterate from first coloumn to the final coloumn of image
-                if(copy(row,col,1) >= 200 && copy(row,col,2) <= 55 && copy(row,col,2) >= 5 && copy(row,col,3) <= 90 && copy(row,col,3) >= 15)% setting color range of desired pixels using RGB values
+                if(copy(row,col,1) >= 200 && copy(row,col,2) <= 60 && copy(row,col,3) <= 90)% setting color range of desired pixels using RGB values
                     copy(row,col,1) = 0;% turning red value to black
                     copy(row,col,2) = 0;% turning green value to black
                     copy(row,col,3) = 0;% turning blue value to black 
@@ -99,3 +100,4 @@ switch color_seletion %switch case to determine which color is gonna be changed
         disp('Incorrect selection');% display error message for invalid selection
 end
 figure(2), imshow(copy);% display image after adjustment 
+
