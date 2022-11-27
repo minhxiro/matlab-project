@@ -2,6 +2,7 @@
 img = imread('coloredChips.png');%importing image 
 figure(1), imshow(img);%displaying original image(pre adjustment)
 %Create menue for color selection
+disp('Welcome the the color conversion program, please select the color to be converted') %Introduction to the program
 disp('The list of colors to be converted:')
 disp('r for red');
 disp('g for green');
@@ -10,13 +11,13 @@ disp('b for blue');
 disp('c for cyan');
 disp('o for orange');
 disp('m for magneta');
-disp('w for white');
+disp('w for background');
 color_seletion = input('Enter the color you want to change to black: ', 's');%prompting user to select color
 copy = img;% make a copy of the image to be adjusted 
 image_row = size(img, 1);%get rows of the image
 image_col = size(img, 2);%get coloumns of image
 switch color_seletion %switch case to determine which color is gonna be changed
-    case 'r'
+    case 'r' %Case red
         for row = 1 : image_row % iterate from first row to the final row of image
             for col = 1: image_col % iterate from first coloumn to the final coloumn of image
                 if(copy(row,col,1) >= 200 && copy(row,col,2) <= 60 && copy(row,col,3) <= 90)% setting color range of desired pixels using RGB values
@@ -26,7 +27,7 @@ switch color_seletion %switch case to determine which color is gonna be changed
                 end
             end
         end
-    case 'g'
+    case 'g' %Case green
         for row = 1: image_row% iterate from first row to the final row of image
             for col = 1 : image_col% iterate from first coloumn to the final coloumn of image
                 if(copy(row,col,1) <= 50 && copy(row,col,2) >= 100 && copy(row,col,2) <=250 && copy(row,col,3) <= 150 && copy(row,col,3) >= 56)% setting color range of desired pixels using RGB values
@@ -36,7 +37,7 @@ switch color_seletion %switch case to determine which color is gonna be changed
                 end
             end
         end
-    case 'b'
+    case 'b' %Case blue
         for row = 1: image_row% iterate from first row to the final row of image
             for col = 1 : image_col% iterate from first coloumn to the final coloumn of image
                 if(copy(row,col,1) <= 20 && copy(row,col,2) <= 100 && copy(row,col,2) >= 45 && copy(row,col,3) >= 150)% setting color range of desired pixels using RGB values
@@ -46,7 +47,7 @@ switch color_seletion %switch case to determine which color is gonna be changed
                 end
             end
         end
-     case 'y'
+    case 'y' %Case yellow
         for row = 1: image_row% iterate from first row to the final row of image
             for col = 1 : image_col% iterate from first coloumn to the final coloumn of image
                 if(copy(row,col,1) >=200 && copy(row,col,2) >= 200 && copy(row,col,3) <= 60)% setting color range of desired pixels using RGB values
@@ -56,7 +57,7 @@ switch color_seletion %switch case to determine which color is gonna be changed
                 end
             end
         end
-      case 'o'
+    case 'o' %Case orange
         for row = 1: image_row% iterate from first row to the final row of image
             for col = 1 : image_col% iterate from first coloumn to the final coloumn of image
                 if(copy(row,col,1) >=119 && copy(row,col,2) <= 120 && copy(row,col,2) >= 40 && copy(row,col,3) <= 60 || (copy(row,col,1) >=130 && copy(row,col,2) <= 140 && copy(row,col,2) >= 20 && copy(row,col,3) <= 20))% setting color range of desired pixels using RGB values
@@ -66,7 +67,7 @@ switch color_seletion %switch case to determine which color is gonna be changed
                 end
             end
         end
-      case 'c'
+    case 'c' %Case cyan
         for row = 1: image_row% iterate from first row to the final row of image
             for col = 1 : image_col% iterate from first coloumn to the final coloumn of image
                 if(copy(row,col,1) <= 55 && copy(row,col,2) >= 140 && copy(row,col,3) >= 140)
@@ -76,7 +77,7 @@ switch color_seletion %switch case to determine which color is gonna be changed
                 end
             end
         end
-      case 'w'
+    case 'w' %Case background
         for row = 1: image_row% iterate from first row to the final row of image
             for col = 1 : image_col% iterate from first coloumn to the final coloumn of image
                 if(copy(row,col,1) >= 62 && copy(row,col,2) >= 62 && copy(row,col,3) >= 62)% setting color range of desired pixels using RGB values
@@ -86,7 +87,7 @@ switch color_seletion %switch case to determine which color is gonna be changed
                 end
             end
         end 
-       case 'm'
+    case 'm' %Case magenta
         for row = 1: image_row% iterate from first row to the final row of image
             for col = 1 : image_col% iterate from first coloumn to the final coloumn of image
                 if(copy(row,col,1) >= 90 && copy(row,col,2) <= 100 && copy(row,col,3) >= 120)% setting color range of desired pixels using RGB values
@@ -100,4 +101,5 @@ switch color_seletion %switch case to determine which color is gonna be changed
         disp('Incorrect selection');% display error message for invalid selection
 end
 figure(2), imshow(copy);% display image after adjustment 
+ 
 
