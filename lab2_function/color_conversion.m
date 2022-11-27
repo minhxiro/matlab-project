@@ -9,7 +9,7 @@ switch choice
     case 'r'
         for row = 1 : image_row
             for col = 1: image_col
-                if(copy(row,col,1) >= 200 && copy(row,col,2) <= 55 && copy(row,col,2) >= 5 && copy(row,col,3) <= 90 && copy(row,col,3) >= 15)
+                if(copy(row,col,1) >= 200 && copy(row,col,2) <= 60 && copy(row,col,3) <= 90)
                     copy(row,col,1) = 0;
                     copy(row,col,2) = 0;
                     copy(row,col,3) = 0;
