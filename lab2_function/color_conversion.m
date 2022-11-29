@@ -90,5 +90,4 @@ switch choice %switch case to determine which color is gonna be changed
     otherwise
         disp('Incorrect selection'); %Print out the error message for invalid selection
 end
-figure(2), imshow(copy); %Show the edited image after each case
 end
