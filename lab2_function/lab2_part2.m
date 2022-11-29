@@ -13,8 +13,6 @@ disp('o for orange');
 disp('m for magneta');
 disp('w for white');
 color_seletion = input('Enter the color you want to change to black: ', 's');%prompting user to select color
-image_row = size(img, 1);%get rows of the image
-image_col = size(img, 2);%get coloumns of image
 color_change = color_conversion(img, color_seletion); %Call the function in to color_change
 figure(2), imshow(color_change);%Show the image after using color conversion function
 title('Color Conversion Program');%Add the title for the program
