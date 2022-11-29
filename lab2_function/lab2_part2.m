@@ -17,3 +17,4 @@ image_row = size(img, 1);%get rows of the image
 image_col = size(img, 2);%get coloumns of image
 figure(2), imshow(color_conversion(img, color_seletion));%Show the image after using color conversion function
 title('Color Conversion Program');%Add the title for the program
+clc %automatically clear the command window
