@@ -99,8 +99,8 @@ switch color_seletion %switch case to determine which color is gonna be changed
         end 
     otherwise
         disp('Incorrect selection');% display error message for invalid selection
-end
-figure(2), imshow(copy);% display image after adjustment 
-clc %automatically clear the command window 
+end 
+figure(2), imshow(copy);% display image after adjustment
+clc %automatically clear the command window
  
 
